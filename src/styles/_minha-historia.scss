@@ -1,0 +1,425 @@
+// =============================================================================
+// PÁGINA MINHA HISTÓRIA — refatorada com Clash Display, peso editorial
+// =============================================================================
+
+.pt-history-hero {
+    padding: clamp(60px, 8vw, 110px) 0 clamp(40px, 5vw, 70px);
+    background-color: var(--pt-cream);
+    border-bottom: 1px solid var(--pt-line);
+}
+
+.pt-history-hero__inner {
+    max-width: 920px;
+    position: relative;
+    z-index: 2;
+}
+
+.pt-history-hero__title {
+    font-family: var(--pt-font-display);
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1.05;
+    color: var(--pt-blue-900);
+    margin: 18px 0 28px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+
+    em {
+        color: var(--pt-orange-700);
+        font-style: italic;
+    }
+}
+
+.pt-history-hero__sub {
+    font-size: clamp(18px, 1.5vw, 22px);
+    line-height: 1.5;
+    color: var(--pt-ink-muted);
+    max-width: 720px;
+    margin: 0;
+    font-weight: 400;
+}
+
+// -----------------------------------------------------------------------------
+// NARRATIVA — texto + foto à direita (sticky)
+// -----------------------------------------------------------------------------
+.pt-history-narrative {
+    padding: clamp(60px, 8vw, 110px) 0;
+    background-color: var(--pt-cream);
+}
+
+.pt-history-narrative__grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: clamp(30px, 5vw, 80px);
+    align-items: start;
+
+    @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.pt-history-narrative__sticky {
+    position: sticky;
+    top: 130px;
+
+    @media (max-width: 991px) { position: static; }
+}
+
+.pt-history-narrative__pretitle {
+    font-family: var(--pt-font-accent);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pt-orange-700);
+    font-weight: 500;
+    margin-bottom: 14px;
+    display: block;
+}
+
+.pt-history-narrative__heading {
+    font-family: var(--pt-font-display);
+    font-size: clamp(28px, 2.8vw, 38px);
+    line-height: 1.15;
+    color: var(--pt-blue-900);
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+
+    em { color: var(--pt-orange-700); font-style: italic; }
+}
+
+.pt-history-narrative__body p {
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--pt-ink);
+    margin: 0 0 24px;
+
+    &:last-child { margin-bottom: 0; }
+
+    a {
+        color: var(--pt-orange-700);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+}
+
+.pt-history-narrative__highlight {
+    background-color: var(--pt-cream-deep);
+    border-left: 3px solid var(--pt-orange-700);
+    padding: 26px 30px;
+    margin: 36px 0;
+    font-family: var(--pt-font-display);
+    font-size: clamp(20px, 1.8vw, 24px);
+    line-height: 1.4;
+    color: var(--pt-blue-900);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+    font-weight: 500;
+}
+
+.pt-history-narrative__photo {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--pt-blue-100);
+    box-shadow: 0 30px 60px rgba(14, 42, 71, 0.16);
+
+    img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media (max-width: 991px) {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// TIMELINE VERTICAL — peso editorial, marcadores grandes
+// -----------------------------------------------------------------------------
+.pt-timeline {
+    padding: clamp(70px, 9vw, 130px) 0;
+    background-color: var(--pt-cream-deep);
+    border-top: 1px solid var(--pt-line);
+}
+
+.pt-timeline__head {
+    text-align: center;
+    margin-bottom: clamp(60px, 7vw, 90px);
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pt-timeline__title {
+    font-family: var(--pt-font-display);
+    font-size: clamp(36px, 4.4vw, 56px);
+    line-height: 1.1;
+    color: var(--pt-blue-900);
+    margin: 14px 0 18px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+
+    em {
+        color: var(--pt-orange-700);
+        font-style: italic;
+    }
+}
+
+.pt-timeline__lead {
+    color: var(--pt-ink-muted);
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.pt-timeline__track {
+    position: relative;
+    max-width: 980px;
+    margin: 0 auto;
+    padding-left: 32px;
+    list-style: none;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        bottom: 12px;
+        left: 0;
+        width: 2px;
+        background: linear-gradient(
+            180deg,
+            var(--pt-orange-700) 0%,
+            var(--pt-orange-500) 50%,
+            var(--pt-blue-700) 100%
+        );
+        border-radius: 2px;
+    }
+}
+
+.pt-timeline__entry {
+    position: relative;
+    padding-left: 50px;
+    padding-bottom: 60px;
+
+    &:last-child { padding-bottom: 0; }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: 6px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background-color: var(--pt-cream-deep);
+        border: 3px solid var(--pt-orange-700);
+        box-shadow: 0 0 0 5px var(--pt-cream-deep);
+        z-index: 1;
+        transition: background-color 280ms ease, transform 360ms ease;
+    }
+
+    &:hover::before {
+        background-color: var(--pt-orange-700);
+        transform: scale(1.15);
+    }
+}
+
+.pt-timeline__period {
+    font-family: var(--pt-font-accent);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--pt-orange-700);
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+
+    .place {
+        background-color: var(--pt-blue-900);
+        color: var(--pt-cream);
+        padding: 4px 11px;
+        border-radius: 999px;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+    }
+}
+
+.pt-timeline__role {
+    font-family: var(--pt-font-display);
+    font-size: clamp(24px, 2.2vw, 30px);
+    line-height: 1.22;
+    color: var(--pt-blue-900);
+    margin: 0 0 14px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.pt-timeline__delivery {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--pt-ink-muted);
+    margin: 0;
+    max-width: 720px;
+}
+
+// -----------------------------------------------------------------------------
+// FORMAÇÃO
+// -----------------------------------------------------------------------------
+.pt-formation {
+    padding: clamp(60px, 8vw, 110px) 0;
+    background-color: var(--pt-cream);
+    border-top: 1px solid var(--pt-line);
+}
+
+.pt-formation__title {
+    font-family: var(--pt-font-display);
+    font-size: clamp(36px, 4vw, 52px);
+    color: var(--pt-blue-900);
+    margin: 14px 0 50px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+
+    em { color: var(--pt-orange-700); font-style: italic; }
+}
+
+.pt-formation__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--pt-line);
+    max-width: 920px;
+}
+
+.pt-formation__item {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--pt-line);
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 30px;
+    align-items: center;
+
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+}
+
+.pt-formation__year {
+    font-family: var(--pt-font-display);
+    font-size: 30px;
+    color: var(--pt-orange-700);
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+}
+
+.pt-formation__detail {
+    .role {
+        display: block;
+        font-family: var(--pt-font-display);
+        font-size: 21px;
+        color: var(--pt-blue-900);
+        font-weight: 500;
+        margin-bottom: 4px;
+        line-height: 1.3;
+    }
+
+    .place {
+        font-size: 14px;
+        color: var(--pt-ink-muted);
+    }
+}
+
+// -----------------------------------------------------------------------------
+// VALORES — 3 cards
+// -----------------------------------------------------------------------------
+.pt-values {
+    padding: clamp(80px, 10vw, 130px) 0;
+    background-color: var(--pt-cream-deep);
+    border-top: 1px solid var(--pt-line);
+}
+
+.pt-values__head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto clamp(50px, 6vw, 80px);
+
+    h2 {
+        font-family: var(--pt-font-display);
+        font-size: clamp(36px, 4vw, 52px);
+        color: var(--pt-blue-900);
+        margin: 14px 0 18px;
+        line-height: 1.1;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+
+        em { color: var(--pt-orange-700); font-style: italic; }
+    }
+
+    p {
+        color: var(--pt-ink-muted);
+        font-size: 17px;
+        line-height: 1.6;
+        margin: 0;
+    }
+}
+
+.pt-values__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    @media (max-width: 991px) { grid-template-columns: 1fr; }
+}
+
+.pt-value {
+    background-color: var(--pt-white);
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-md);
+    padding: 40px 32px;
+    text-align: center;
+    transition: transform 360ms ease, box-shadow 360ms ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 48px rgba(14, 42, 71, 0.10);
+    }
+}
+
+.pt-value__num {
+    font-family: var(--pt-font-display);
+    font-size: 52px;
+    color: var(--pt-orange-700);
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 22px;
+    display: block;
+}
+
+.pt-value__title {
+    font-family: var(--pt-font-display);
+    font-size: 22px;
+    color: var(--pt-blue-900);
+    line-height: 1.3;
+    margin: 0 0 16px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+}
+
+.pt-value__desc {
+    font-size: 15.5px;
+    color: var(--pt-ink-muted);
+    line-height: 1.65;
+    margin: 0;
+}

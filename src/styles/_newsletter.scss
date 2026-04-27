@@ -1,0 +1,155 @@
+// =============================================================================
+// NEWSLETTER — bloco editorial com fotos placeholder laterais
+// Inspirado em ShopModernNewsletter do agntix.
+// Sem gradient azul-laranja "cara de SaaS".
+// =============================================================================
+.pt-newsletter {
+    padding: clamp(80px, 10vw, 130px) 0;
+    background-color: var(--pt-cream-deep);
+    border-top: 1px solid var(--pt-line);
+    overflow: hidden;
+}
+
+.pt-newsletter__layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 30px;
+    align-items: center;
+
+    @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.pt-newsletter__side {
+    @media (max-width: 991px) { display: none; }
+}
+
+.pt-newsletter__photo {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 240px;
+    background-color: var(--pt-blue-100);
+
+    img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.pt-newsletter__photo--right {
+    margin-left: auto;
+    transform: translateY(20px);
+}
+
+.pt-newsletter__inner {
+    text-align: center;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.pt-newsletter__overline {
+    color: var(--pt-orange-700);
+    font-family: var(--pt-font-accent);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    display: block;
+    font-weight: 500;
+}
+
+.pt-newsletter__title {
+    font-family: var(--pt-font-display);
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    color: var(--pt-blue-900);
+    font-weight: 600;
+    margin: 0 0 20px;
+    letter-spacing: -0.02em;
+
+    em {
+        color: var(--pt-orange-700);
+        font-style: italic;
+    }
+}
+
+.pt-newsletter__lead {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--pt-ink-muted);
+    margin: 0 0 36px;
+}
+
+.pt-newsletter__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 12px;
+
+    @media (max-width: 720px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pt-newsletter__input {
+    background-color: var(--pt-white);
+    border: 1px solid var(--pt-line);
+    color: var(--pt-blue-900);
+    padding: 16px 20px;
+    font-family: var(--pt-font-body);
+    font-size: 15px;
+    border-radius: 999px;
+    outline: none;
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+
+    &::placeholder {
+        color: var(--pt-ink-muted);
+        opacity: 0.7;
+    }
+
+    &:focus {
+        border-color: var(--pt-orange-700);
+        box-shadow: 0 0 0 3px var(--pt-orange-200);
+    }
+}
+
+.pt-newsletter__submit {
+    padding: 16px 28px;
+    background-color: var(--pt-orange-700);
+    color: var(--pt-white) !important;
+    font-family: var(--pt-font-body);
+    font-weight: 500;
+    font-size: 15px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 220ms ease, transform 220ms ease;
+
+    &:hover {
+        background-color: var(--pt-orange-900);
+        transform: translateY(-1px);
+    }
+}
+
+.pt-newsletter__microcopy {
+    margin-top: 22px;
+    font-size: 13px;
+    color: var(--pt-ink-muted);
+    font-family: var(--pt-font-accent);
+    letter-spacing: 0.04em;
+}
+
+.pt-newsletter__success {
+    font-size: 18px;
+    color: var(--pt-orange-700);
+    font-family: var(--pt-font-display);
+    font-style: italic;
+    padding: 20px 0;
+}

@@ -1,0 +1,482 @@
+// =============================================================================
+// Patrícia Ianda — header, mobile menu e footer
+// Adota classes do agntix (tp-header-area, tp-offcanvas-area, tp-footer-widget)
+// e sobrescreve cores/fontes pra paleta laranja+azul.
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// HEADER (em cima de tp-header-area · tp-header-blur · sticky-white-bg)
+// -----------------------------------------------------------------------------
+.pt-header-shell {
+    position: relative;
+    z-index: 100;
+}
+
+#header-sticky.tp-header-area {
+    background-color: transparent;
+    transition: background-color 320ms ease, padding 280ms ease, border-color 280ms ease;
+    border-bottom: 1px solid transparent;
+
+    &.header-sticky,
+    &.header-sticky.sticky-white-bg {
+        background-color: rgba(250, 246, 241, 0.92) !important;
+        backdrop-filter: saturate(180%) blur(14px);
+        -webkit-backdrop-filter: saturate(180%) blur(14px);
+        border-bottom-color: var(--pt-line);
+        box-shadow: 0 8px 30px var(--pt-shadow);
+    }
+}
+
+// Menu desktop — aplica em cima de .tp-header-menu ul li a do agntix
+.tp-header-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    li {
+        position: relative;
+
+        a {
+            position: relative;
+            font-family: var(--pt-font-body);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--pt-blue-900);
+            text-decoration: none;
+            padding: 6px 0;
+            line-height: 1;
+            transition: color 220ms ease;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                bottom: -2px;
+                transform: translateX(-50%);
+                width: 0;
+                height: 2px;
+                background-color: var(--pt-orange-700);
+                transition: width 280ms ease;
+            }
+
+            &:hover {
+                color: var(--pt-orange-700);
+            }
+
+            &:hover::after {
+                width: 24px;
+            }
+        }
+
+        &.active a {
+            color: var(--pt-orange-700);
+
+            &::after {
+                width: 24px;
+            }
+        }
+    }
+}
+
+// Logo tipográfico
+.pt-logo {
+    font-family: var(--pt-font-display);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--pt-blue-900);
+    line-height: 1;
+    letter-spacing: -0.015em;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 200ms ease;
+
+    em {
+        color: var(--pt-orange-700);
+        font-style: italic;
+    }
+
+    &:hover { color: var(--pt-blue-900); }
+}
+
+// CTA — pill laranja
+.pt-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--pt-font-body);
+    font-weight: 500;
+    font-size: 14px;
+    padding: 12px 22px;
+    background-color: var(--pt-orange-700);
+    color: var(--pt-white);
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background-color 220ms ease, transform 220ms ease;
+    border: none;
+    cursor: pointer;
+
+    .arr { display: inline-block; transition: transform 220ms ease; }
+
+    &:hover {
+        background-color: var(--pt-orange-900);
+        color: var(--pt-white);
+        transform: translateY(-1px);
+
+        .arr { transform: translateX(3px); }
+    }
+}
+
+// Burger mobile
+.pt-burger {
+    display: none;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 1px solid var(--pt-line);
+    border-radius: 999px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 200ms ease, background-color 200ms ease;
+    padding: 0;
+
+    &:hover {
+        border-color: var(--pt-orange-700);
+        background-color: var(--pt-orange-100);
+    }
+
+    > span {
+        position: relative;
+        display: block;
+        width: 18px;
+        height: 1.5px;
+        background-color: var(--pt-blue-900);
+
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 18px;
+            height: 1.5px;
+            background-color: var(--pt-blue-900);
+        }
+        &::before { top: -6px; }
+        &::after  { top: 6px; }
+    }
+
+    @media (max-width: 1199.98px) {
+        display: inline-flex;
+    }
+}
+
+// Spacer pra empurrar conteúdo abaixo do header fixo
+.pt-header-spacer {
+    height: 96px;
+
+    @media (max-width: 1199px) { height: 80px; }
+}
+
+// -----------------------------------------------------------------------------
+// MOBILE OFFCANVAS DRAWER
+// -----------------------------------------------------------------------------
+.pt-offcanvas {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    pointer-events: none;
+}
+
+.pt-offcanvas__backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(14, 42, 71, 0.5);
+    opacity: 0;
+    transition: opacity 360ms ease;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.pt-offcanvas__panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(420px, 92vw);
+    height: 100%;
+    background-color: var(--pt-cream);
+    box-shadow: -10px 0 50px rgba(14, 42, 71, 0.18);
+    transform: translateX(100%);
+    transition: transform 420ms cubic-bezier(0.22, 0.7, 0.18, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 32px 36px 40px;
+    overflow-y: auto;
+}
+
+.pt-offcanvas--open {
+    pointer-events: auto;
+
+    .pt-offcanvas__backdrop { opacity: 1; }
+    .pt-offcanvas__panel    { transform: translateX(0); }
+}
+
+.pt-offcanvas__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.pt-offcanvas__close {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--pt-line);
+    border-radius: 999px;
+    background: transparent;
+    cursor: pointer;
+    color: var(--pt-blue-900);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--pt-font-display);
+    font-size: 22px;
+    line-height: 1;
+    transition: all 200ms ease;
+    padding: 0;
+
+    &:hover {
+        color: var(--pt-orange-700);
+        border-color: var(--pt-orange-700);
+        background-color: var(--pt-orange-100);
+        transform: rotate(90deg);
+    }
+}
+
+.pt-offcanvas__nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pt-offcanvas__link {
+    display: block;
+    padding: 16px 0;
+    font-family: var(--pt-font-display);
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--pt-blue-900);
+    text-decoration: none;
+    border-bottom: 1px solid var(--pt-line);
+    transition: color 200ms ease, padding-left 280ms ease, border-color 200ms ease;
+    line-height: 1.1;
+
+    &:hover,
+    &--active {
+        color: var(--pt-orange-700);
+        padding-left: 10px;
+        border-bottom-color: var(--pt-orange-300);
+    }
+}
+
+.pt-offcanvas__footer {
+    margin-top: auto;
+    padding-top: 40px;
+
+    .pt-overline { margin-bottom: 14px; }
+
+    a {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// FOOTER
+// -----------------------------------------------------------------------------
+footer.pt-footer {
+    background-color: var(--pt-cream-deep);
+    border-top: 1px solid var(--pt-line);
+    padding: 110px 0 30px;
+    position: relative;
+}
+
+.pt-footer__motto {
+    font-family: var(--pt-font-display);
+    font-size: clamp(26px, 3vw, 40px);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--pt-blue-900);
+    letter-spacing: -0.012em;
+    margin: 0 0 60px;
+    text-align: left;
+    max-width: 720px;
+
+    em {
+        color: var(--pt-orange-700);
+        font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 44px;
+    }
+}
+
+.pt-footer__grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1.1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--pt-line);
+
+    @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.pt-footer__widget h4 {
+    font-family: var(--pt-font-accent);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pt-orange-700);
+    margin-bottom: 22px;
+}
+
+.pt-footer__widget--lead p {
+    font-family: var(--pt-font-display);
+    font-size: clamp(20px, 2vw, 26px);
+    line-height: 1.35;
+    color: var(--pt-blue-900);
+    margin: 0;
+    font-weight: 500;
+    max-width: 420px;
+
+    em { color: var(--pt-orange-700); font-style: italic; }
+}
+
+.pt-footer__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li { margin-bottom: 12px; }
+
+    a {
+        font-size: 16px;
+        font-family: var(--pt-font-body);
+        color: var(--pt-blue-900);
+        text-decoration: none;
+        position: relative;
+        transition: color 220ms ease, padding-left 240ms ease;
+
+        &::before {
+            content: "→";
+            position: absolute;
+            left: -22px;
+            opacity: 0;
+            transform: translateX(-6px);
+            transition: opacity 220ms ease, transform 220ms ease;
+            color: var(--pt-orange-700);
+        }
+
+        &:hover {
+            color: var(--pt-orange-700);
+            padding-left: 6px;
+
+            &::before {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+.pt-footer__contact-line {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: var(--pt-blue-900);
+
+    &:hover { color: var(--pt-orange-700); }
+}
+
+.pt-footer__social {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+
+    a {
+        width: 44px;
+        height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        border: 1px solid var(--pt-line);
+        color: var(--pt-blue-900);
+        transition: all 280ms cubic-bezier(0.22, 0.7, 0.18, 1);
+
+        &:hover {
+            color: var(--pt-white);
+            background-color: var(--pt-orange-700);
+            border-color: var(--pt-orange-700);
+            transform: translateY(-2px) rotate(-4deg);
+        }
+
+        svg { width: 18px; height: 18px; display: block; }
+    }
+}
+
+.pt-footer__bottom {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    p, a {
+        margin: 0;
+        font-size: 13px;
+        color: var(--pt-ink-muted);
+        font-family: var(--pt-font-accent);
+    }
+
+    a:hover { color: var(--pt-orange-700); }
+}
+
+// -----------------------------------------------------------------------------
+// Page hero placeholder (transitório)
+// -----------------------------------------------------------------------------
+.pt-page-stub {
+    padding: 100px 0 140px;
+    text-align: center;
+
+    h1 {
+        font-family: var(--pt-font-display);
+        font-size: clamp(36px, 4.5vw, 56px);
+        margin-bottom: 18px;
+    }
+
+    p {
+        max-width: 640px;
+        margin: 0 auto;
+        color: var(--pt-ink-muted);
+        font-size: 18px;
+    }
+
+    .pt-overline {
+        display: block;
+        margin-bottom: 18px;
+    }
+}

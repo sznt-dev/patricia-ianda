@@ -1,0 +1,234 @@
+// =============================================================================
+// Patrícia Ianda — design tokens
+// Paleta laranja + azul, light mode obrigatório, contenção tipográfica.
+// Não usar headlines acima de ~64px. Sem dark mode em hipótese alguma.
+// =============================================================================
+
+// Clash Display — fonte editorial local (vem do agntix). Carregada aqui
+// porque next/font do Google só serve fontes do Google.
+@font-face {
+    font-family: "ClashDisplay";
+    src: url("/assets/fonts/ClashDisplay-Light.woff2") format("woff2"),
+         url("/assets/fonts/ClashDisplay-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClashDisplay";
+    src: url("/assets/fonts/ClashDisplay-Regular.woff2") format("woff2"),
+         url("/assets/fonts/ClashDisplay-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClashDisplay";
+    src: url("/assets/fonts/ClashDisplay-Medium.woff2") format("woff2"),
+         url("/assets/fonts/ClashDisplay-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClashDisplay";
+    src: url("/assets/fonts/ClashDisplay-Semibold.woff2") format("woff2"),
+         url("/assets/fonts/ClashDisplay-Semibold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClashDisplay";
+    src: url("/assets/fonts/ClashDisplay-Bold.woff2") format("woff2"),
+         url("/assets/fonts/ClashDisplay-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+  // ---- Bases (off-white, sem branco puro como fundo principal) ----
+  --pt-cream:        #faf6f1;
+  --pt-cream-deep:   #f3ede4;
+  --pt-cream-edge:   #ede5d8;
+  --pt-white:        #ffffff;
+
+  // ---- Azul (autoridade, confiança institucional) ----
+  --pt-blue-900:     #0e2a47;  // títulos, navy editorial
+  --pt-blue-800:     #163a5f;
+  --pt-blue-700:     #1f4a78;  // texto de impacto, links
+  --pt-blue-500:     #4775a3;
+  --pt-blue-400:     #6f96bf;
+  --pt-blue-200:     #c5d4e5;  // bg sutil, divisores
+  --pt-blue-100:     #e6edf5;
+
+  // ---- Laranja (calor humano, força feminina) ----
+  --pt-orange-900:   #8c3d12;
+  --pt-orange-700:   #c25a1f;  // acento principal, CTAs
+  --pt-orange-500:   #e07b3a;  // hover, destaque
+  --pt-orange-300:   #f0a574;
+  --pt-orange-200:   #f6d2b3;  // tag, highlight
+  --pt-orange-100:   #fbe8d8;
+
+  // ---- Texto ----
+  --pt-ink:          #1a1d24;
+  --pt-ink-muted:    #5e6470;
+  --pt-line:         #e2dbd0;
+
+  // ---- Estados / sistema ----
+  --pt-focus:        #c25a1f;  // outline de foco
+  --pt-shadow:       rgba(14, 42, 71, 0.08);
+
+  // ---- Tipografia ----
+  // Display: Clash Display (local, woff2) é a fonte editorial principal.
+  // Playfair entra como fallback caso Clash não carregue + para variantes em itálico.
+  --pt-font-clash:   "ClashDisplay", "Playfair Display", Georgia, serif;
+  --pt-font-display: var(--font-playfair-display), Georgia, serif;
+  --pt-font-body:    var(--font-onest), -apple-system, system-ui, sans-serif;
+  --pt-font-accent:  var(--font-space-grotesk), -apple-system, system-ui, sans-serif;
+
+  // ---- Escala tipográfica (contida) ----
+  --pt-fs-hero:      clamp(40px, 5.5vw, 64px);   // hero headline — nunca passar de 64
+  --pt-fs-h1:        clamp(32px, 4vw, 52px);
+  --pt-fs-h2:        clamp(28px, 3.5vw, 44px);
+  --pt-fs-h3:        clamp(22px, 2.5vw, 32px);
+  --pt-fs-h4:        20px;
+  --pt-fs-counter:   clamp(48px, 6vw, 84px);
+  --pt-fs-overline:  14px;
+  --pt-fs-body-l:    19px;
+  --pt-fs-body:      17px;
+  --pt-fs-small:     14px;
+
+  // ---- Espaçamentos ----
+  --pt-section-y-desktop: 140px;
+  --pt-section-y-mobile:  72px;
+  --pt-radius-sm:    6px;
+  --pt-radius-md:    12px;
+  --pt-radius-lg:    24px;
+}
+
+// =============================================================================
+// Resets e overrides em cima do agntix base
+// =============================================================================
+
+html, body {
+  background-color: var(--pt-cream);
+  color: var(--pt-ink);
+  font-family: var(--pt-font-body);
+  font-size: var(--pt-fs-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-weight: 400;
+}
+
+// Headings com display serif, peso contido
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--pt-font-display);
+  color: var(--pt-blue-900);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+// Links: comportamento padrão (texto inline em parágrafos, listas, footer).
+// Componentes que precisam de comportamento próprio (botões com bg colorido,
+// CTAs pill) declaram color/hover explicitamente e devem ignorar essa cascata.
+a {
+  color: var(--pt-blue-700);
+  text-decoration: none;
+  transition: color 200ms ease, background-color 200ms ease;
+}
+
+// Hover orange só pra links de TEXTO, não pra botões com fundo colorido.
+// Esses seletores excluem QUALQUER elemento que carrega uma classe de botão.
+a:not([class*="pt-btn"]):not([class*="pt-cta"]):not([class*="pt-whatsapp"]):not([class*="pt-newsletter__submit"]):not(.pt-logo):hover {
+  color: var(--pt-orange-700);
+}
+
+::selection {
+  background: var(--pt-orange-200);
+  color: var(--pt-blue-900);
+}
+
+// Foco visível e estratégico (acessibilidade)
+:focus-visible {
+  outline: 2px solid var(--pt-focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+// Skip link — fica oculto até receber foco via Tab
+.pt-skip-link {
+  position: absolute;
+  top: -200px;
+  left: 16px;
+  background-color: var(--pt-orange-700);
+  color: var(--pt-white);
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-family: var(--pt-font-body);
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 9999;
+  text-decoration: none;
+  transition: top 220ms ease;
+
+  &:focus {
+    top: 16px;
+    color: var(--pt-white);
+  }
+}
+
+// Respeita preferência do usuário por menos movimento
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .pt-manifesto__track,
+  .pt-press__track {
+    animation: none !important;
+    transform: translateX(0) !important;
+  }
+}
+
+// =============================================================================
+// Helpers utilitários da Patrícia (pt- prefix; coexistem com utilitários do agntix)
+// =============================================================================
+
+.pt-overline {
+  font-family: var(--pt-font-accent);
+  font-size: var(--pt-fs-overline);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pt-orange-700);
+}
+
+.pt-section {
+  padding-top: var(--pt-section-y-desktop);
+  padding-bottom: var(--pt-section-y-desktop);
+
+  @media (max-width: 768px) {
+    padding-top: var(--pt-section-y-mobile);
+    padding-bottom: var(--pt-section-y-mobile);
+  }
+}
+
+.pt-bg-cream     { background-color: var(--pt-cream) !important; }
+.pt-bg-cream-deep{ background-color: var(--pt-cream-deep) !important; }
+.pt-bg-blue-100  { background-color: var(--pt-blue-100) !important; }
+
+.pt-text-orange  { color: var(--pt-orange-700) !important; }
+.pt-text-blue    { color: var(--pt-blue-900) !important; }
+.pt-text-muted   { color: var(--pt-ink-muted) !important; }
