@@ -11,7 +11,7 @@ const milestones: Milestone[] = [
     { period: "Atibaia · Bertioga · Guarulhos", role: "Secretária municipal em três cidades" },
     { period: "Franca, SP", role: "Diretora regional do SUAS — 43 municípios coordenados" },
     { period: "Estado de São Paulo", role: "Diretora de Proteção Social Especial" },
-    { period: "Hoje", role: "CEO de uma das principais GovTechs sociais do Brasil" },
+    { period: "Hoje", role: "CEO da Alicerce — GovTech de Políticas Públicas do Brasil" },
 ];
 
 const StoryPreviewSection = () => {

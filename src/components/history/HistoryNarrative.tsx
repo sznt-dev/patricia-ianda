@@ -45,17 +45,10 @@ const HistoryNarrative = () => {
 
                         <p>
                             Quando percebeu que a gestão pública emperrava não por falta de
-                            vontade, mas por falta de ferramentas, fundou o{" "}
-                            <a
-                                href="https://suasfacil.com.br"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                SUAS Fácil
-                            </a>
-                            . Uma GovTech social que hoje atua em municípios de todo o Brasil,
-                            tornando a gestão da assistência social mais ágil, organizada e
-                            eficiente.
+                            vontade, mas por falta de ferramentas, fundou a Alicerce — uma
+                            GovTech de Políticas Públicas do Brasil. Hoje à frente da
+                            empresa, atua em municípios de todo o país, tornando a gestão da
+                            assistência social mais ágil, organizada e eficiente.
                         </p>
                         <p>
                             Mas nenhuma plataforma substitui a convicção. E a de Patrícia é

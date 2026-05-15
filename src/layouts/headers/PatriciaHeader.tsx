@@ -52,7 +52,7 @@ const PatriciaHeader = ({ onOpenMenu }: PatriciaHeaderProps) => {
                                     href="/fale-comigo"
                                     className="pt-cta d-none d-xl-inline-flex"
                                 >
-                                    Fale Comigo
+                                    Vamos conversar
                                     <span className="arr" aria-hidden="true">→</span>
                                 </TransitionLink>
                                 <button

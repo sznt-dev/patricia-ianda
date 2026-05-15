@@ -19,7 +19,7 @@ export const projects: Project[] = [
         result: "Mais de 200 mulheres atendidas no piloto",
     },
     {
-        title: "SUAS Fácil — GovTech social",
+        title: "Alicerce — GovTech de Políticas Públicas",
         partners: "Municípios brasileiros · gestores SUAS",
         desc: "Plataforma que digitaliza fluxos do SUAS, permite gestão por dados e integra equipes de proteção social básica e especial.",
         result: "Operando em municípios em todo o país",
@@ -64,7 +64,7 @@ export const talks: Talk[] = [
     },
     {
         date: "Fev 2026",
-        title: "GovTechs sociais: oportunidades para municípios",
+        title: "GovTechs de Políticas Públicas: oportunidades para municípios",
         organization: "CONFEMS",
         city: "Curitiba · PR",
         theme: "Gestão",
@@ -126,7 +126,7 @@ export const gallery: GalleryItem[] = [
     { caption: "Audiência pública · São Paulo 2021" },
     { caption: "Painel TEDx · 2025" },
     { caption: "Visita ao acolhimento · 2022", span: "tall" },
-    { caption: "Lançamento SUAS Fácil · 2023" },
+    { caption: "Lançamento Alicerce · 2023" },
     { caption: "Mesa redonda — Violência · 2024", span: "wide" },
     { caption: "Comemoração equipe · 2024" },
     { caption: "ENAP · Brasília 2025" },

@@ -8,6 +8,7 @@ export const menuData: MenuItem[] = [
     { title: "Minha História",      href: "/minha-historia" },
     { title: "Meu Trabalho",        href: "/meu-trabalho" },
     { title: "Patrícia na Mídia",   href: "/patricia-na-midia" },
+    { title: "Blog",                href: "/blog" },
     { title: "Fale Comigo",         href: "/fale-comigo" },
 ];
 

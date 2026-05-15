@@ -6,8 +6,8 @@ const personSchema = {
     jobTitle: "Psicóloga, gestora pública e CEO",
     worksFor: {
         "@type": "Organization",
-        name: "SUAS Fácil",
-        url: "https://suasfacil.com.br",
+        name: "Alicerce",
+        description: "GovTech de Políticas Públicas do Brasil",
     },
     sameAs: [
         "https://www.instagram.com/patricia.ianda/",
@@ -17,7 +17,7 @@ const personSchema = {
     ],
     nationality: "Brazilian",
     description:
-        "Psicóloga, gestora pública e empreendedora social. Liderança em assistência social no Brasil, com mais de duas décadas em municípios, regional e estadual, e à frente de uma das principais GovTechs sociais do país.",
+        "Psicóloga, gestora pública e empreendedora social. Liderança em assistência social no Brasil, com mais de duas décadas em municípios, regional e estadual, e à frente da Alicerce — GovTech de Políticas Públicas do Brasil.",
 };
 
 const PersonJsonLd = () => (

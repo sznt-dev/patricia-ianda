@@ -7,13 +7,18 @@ interface Phrase {
     em?: string;
 }
 
+// Manifesto da Patrícia — frase única dividida em duas partes que
+// alternam no loop horizontal, mantendo o efeito de marquee editorial
+// do agntix (CorporateAgencyTextSlider).
 const phrases: Phrase[] = [
-    { text: "Dignidade não é utopia", em: "utopia" },
-    { text: "Tecnologia a serviço do humano", em: "humano" },
-    { text: "Gestão é cuidado com escala", em: "escala" },
-    { text: "Mulheres no centro da política pública", em: "centro" },
-    { text: "Política pública chega quando alguém faz", em: "alguém faz" },
-    { text: "Não negocio o que é direito", em: "direito" },
+    {
+        text: "Eu não acredito em política pública feita de gabinete.",
+        em: "gabinete",
+    },
+    {
+        text: "Acredito em política pública que chega na ponta.",
+        em: "chega na ponta",
+    },
 ];
 
 const renderPhrase = (p: Phrase) => {
@@ -29,13 +34,9 @@ const renderPhrase = (p: Phrase) => {
     );
 };
 
-/**
- * Marquee de manifesto — Swiper FreeMode + Autoplay com speed alto (7000ms).
- * Esse é o ease lento e contínuo do agntix (CorporateAgencyTextSlider).
- */
 const ManifestoMarquee = () => {
     return (
-        <section className="pt-manifesto" aria-label="Manifesto">
+        <section className="pt-manifesto" aria-label="Manifesto de Patrícia Ianda">
             <Swiper
                 className="pt-manifesto-track slide-transtion"
                 modules={[Autoplay, FreeMode]}
@@ -53,7 +54,7 @@ const ManifestoMarquee = () => {
                         <span className="pt-manifesto__phrase">
                             {renderPhrase(p)}
                         </span>
-                        <span className="pt-manifesto__sep" aria-hidden="true">·</span>
+                        <span className="pt-manifesto__sep" aria-hidden="true">✦</span>
                     </SwiperSlide>
                 ))}
             </Swiper>

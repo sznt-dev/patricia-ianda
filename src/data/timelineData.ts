@@ -49,9 +49,9 @@ export const timelineEntries: TimelineEntry[] = [
     },
     {
         period: "Hoje",
-        role: "CEO — SUAS Fácil",
+        role: "CEO — Alicerce",
         place: "Brasil",
         delivery:
-            "Liderança de uma das principais GovTechs sociais do Brasil, com impacto direto na gestão municipal da assistência social em todo o país.",
+            "Liderança da Alicerce, GovTech de Políticas Públicas do Brasil, com impacto direto na gestão municipal da assistência social em todo o país.",
     },
 ];

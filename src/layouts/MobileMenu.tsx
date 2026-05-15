@@ -92,7 +92,7 @@ const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
                             className="pt-cta"
                             onClick={onClose}
                         >
-                            Fale comigo
+                            Vamos conversar sobre impacto público
                             <span className="arr" aria-hidden="true">→</span>
                         </TransitionLink>
                     </div>

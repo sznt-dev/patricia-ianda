@@ -36,7 +36,7 @@ export const reports: Report[] = [
     {
         outlet: "Estadão",
         date: "Mar 2026",
-        title: "GovTechs sociais ganham espaço nos municípios brasileiros",
+        title: "GovTechs de Políticas Públicas ganham espaço nos municípios brasileiros",
         href: "#",
     },
     {

@@ -36,14 +36,14 @@ export const metadata: Metadata = {
         template: "%s · Patrícia Ianda",
     },
     description:
-        "Uma das principais referências brasileiras em assistência social e políticas públicas. Psicóloga, gestora pública e CEO do SUAS Fácil.",
+        "Uma das principais referências brasileiras em assistência social e políticas públicas. Psicóloga, gestora pública e CEO da Alicerce.",
     openGraph: {
         type: "website",
         locale: "pt_BR",
         url: "https://patriciaianda.com.br",
         title: "Patrícia Ianda",
         description:
-            "Uma das principais referências brasileiras em assistência social e políticas públicas. Psicóloga, gestora pública e CEO do SUAS Fácil.",
+            "Uma das principais referências brasileiras em assistência social e políticas públicas. Psicóloga, gestora pública e CEO da Alicerce.",
         siteName: "Patrícia Ianda",
     },
     robots: { index: true, follow: true },

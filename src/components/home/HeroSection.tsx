@@ -37,9 +37,9 @@ const HeroSection = () => {
                         </h1>
 
                         <p className="pt-hero__lead tp_fade_anim" data-delay=".5">
-                            Psicóloga, gestora pública e CEO de uma das principais GovTechs
-                            sociais do Brasil. Mais de duas décadas transformando estruturas
-                            complexas em soluções acessíveis, eficientes e humanas.
+                            Psicóloga, gestora pública e CEO da Alicerce, GovTech de
+                            Políticas Públicas do Brasil. Mais de duas décadas transformando
+                            estruturas complexas em soluções acessíveis, eficientes e humanas.
                         </p>
 
                         <div
@@ -48,12 +48,12 @@ const HeroSection = () => {
                             data-fade-from="top"
                             data-ease="bounce"
                         >
-                            <TransitionLink href="/minha-historia" className="pt-btn pt-btn--primary">
-                                Conheça minha história
+                            <TransitionLink href="/fale-comigo" className="pt-btn pt-btn--primary">
+                                Vamos conversar sobre impacto público
                                 <span className="arr" aria-hidden="true">→</span>
                             </TransitionLink>
-                            <TransitionLink href="/fale-comigo" className="pt-btn pt-btn--ghost">
-                                Fale comigo
+                            <TransitionLink href="/minha-historia" className="pt-btn pt-btn--ghost">
+                                Conheça minha história
                             </TransitionLink>
                         </div>
 
