@@ -1,6 +1,6 @@
 import Image from "next/image";
 import TransitionLink from "@/components/shared/TransitionLink";
-import heroPhoto from "../../../public/assets/img/patricia/hero-photo.png";
+import heroPhoto from "../../../public/assets/img/patricia/hero.jpg";
 
 /**
  * Hero da home — modelo contido.

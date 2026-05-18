@@ -202,12 +202,12 @@
 
 .pt-preview-story__photo {
     position: relative;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 3 / 2;
     border-radius: 4px;
     overflow: hidden;
     background-color: var(--pt-blue-100);
     box-shadow: 0 30px 60px rgba(14, 42, 71, 0.16);
-    max-width: 440px;
+    max-width: 540px;
 
     img {
         width: 100%;

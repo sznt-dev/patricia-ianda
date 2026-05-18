@@ -1,6 +1,6 @@
 import Image from "next/image";
 import TransitionLink from "@/components/shared/TransitionLink";
-import storyPhoto from "../../../public/assets/img/patricia/story-photo.jpg";
+import storyPhoto from "../../../public/assets/img/patricia/story.jpg";
 
 interface Milestone {
     period: string;

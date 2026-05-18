@@ -34,6 +34,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Original (não otimizadas) — versões processadas vivem em public/assets/img/patricia/
+/hero.jpg
+/Historia.jpg
+/newsletter.jpg
+/newsletter 2.jpg
+/segunda dobra.jpg
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

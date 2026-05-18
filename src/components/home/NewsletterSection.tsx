@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import sidePhotoLeft from "../../../public/assets/img/placeholders/photo-5.jpg";
-import sidePhotoRight from "../../../public/assets/img/placeholders/photo-6.jpg";
+import sidePhotoLeft from "../../../public/assets/img/patricia/newsletter-1.jpg";
+import sidePhotoRight from "../../../public/assets/img/patricia/newsletter-2.jpg";
 
 const NewsletterSection = () => {
     const [submitted, setSubmitted] = useState(false);

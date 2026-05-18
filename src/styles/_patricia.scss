@@ -112,6 +112,21 @@
 // Resets e overrides em cima do agntix base
 // =============================================================================
 
+// Container: o agntix sobrescreveu .container pra 1510px (largo demais pra
+// estética editorial contida da Patrícia). Volto aos breakpoints conservadores
+// — máx 1240px, com padding lateral confortável.
+.container {
+    max-width: 1240px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+
+    @media (max-width: 768px) {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
+
 html, body {
   background-color: var(--pt-cream);
   color: var(--pt-ink);

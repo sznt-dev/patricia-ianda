@@ -1,5 +1,5 @@
 import Image from "next/image";
-import narrativePhoto from "../../../public/assets/img/placeholders/photo-7.jpg";
+import narrativePhoto from "../../../public/assets/img/patricia/historia.jpg";
 
 const HistoryNarrative = () => {
     return (
