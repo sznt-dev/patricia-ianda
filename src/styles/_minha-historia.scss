@@ -120,7 +120,7 @@
 .pt-history-narrative__photo {
     position: relative;
     aspect-ratio: 2 / 3;
-    border-radius: 4px;
+    border-radius: var(--pt-radius-photo);
     overflow: hidden;
     background-color: var(--pt-blue-100);
     box-shadow: 0 30px 60px rgba(14, 42, 71, 0.16);

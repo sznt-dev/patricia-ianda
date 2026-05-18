@@ -108,7 +108,7 @@
     width: 100%;
     max-width: 460px;
     margin-left: auto;
-    border-radius: 4px;
+    border-radius: var(--pt-radius-photo);
     overflow: hidden;
     background-color: var(--pt-blue-100);
     box-shadow: 0 30px 60px rgba(14, 42, 71, 0.16);

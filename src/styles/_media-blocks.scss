@@ -264,7 +264,7 @@
 .pt-insta__tile {
     position: relative;
     aspect-ratio: 1 / 1;
-    border-radius: 6px;
+    border-radius: var(--pt-radius-photo);
     overflow: hidden;
     background-color: var(--pt-cream-deep);
     cursor: pointer;
@@ -349,7 +349,7 @@
 .pt-blog-card {
     background-color: var(--pt-cream);
     border: 1px solid var(--pt-line);
-    border-radius: var(--pt-radius-md);
+    border-radius: var(--pt-radius-photo);
     overflow: hidden;
     text-decoration: none;
     color: inherit;
